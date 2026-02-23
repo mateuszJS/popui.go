@@ -13,7 +13,7 @@ import (
 	"github.com/invopop/popui.go/props"
 )
 
-func BreadcrumbsExample() templ.Component {
+func BreadcrumbsWithAttributesExample() templ.Component {
 	return templruntime.GeneratedTemplate(func(templ_7745c5c3_Input templruntime.GeneratedComponentInput) (templ_7745c5c3_Err error) {
 		templ_7745c5c3_W, ctx := templ_7745c5c3_Input.Writer, templ_7745c5c3_Input.Context
 		if templ_7745c5c3_CtxErr := ctx.Err(); templ_7745c5c3_CtxErr != nil {
@@ -49,6 +49,12 @@ func BreadcrumbsExample() templ.Component {
 			templ_7745c5c3_Err = popui.Breadcrumb(props.Breadcrumb{
 				Label: "Home",
 				Href:  "/",
+				Attributes: templ.Attributes{
+					"hx-get":      "/",
+					"hx-target":   "#content",
+					"hx-swap":     "innerHTML",
+					"hx-push-url": "/",
+				},
 			}).Render(ctx, templ_7745c5c3_Buffer)
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
@@ -60,6 +66,12 @@ func BreadcrumbsExample() templ.Component {
 			templ_7745c5c3_Err = popui.Breadcrumb(props.Breadcrumb{
 				Label: "Products",
 				Href:  "/products",
+				Attributes: templ.Attributes{
+					"hx-get":      "/products",
+					"hx-target":   "#content",
+					"hx-swap":     "innerHTML",
+					"hx-push-url": "/products",
+				},
 			}).Render(ctx, templ_7745c5c3_Buffer)
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
