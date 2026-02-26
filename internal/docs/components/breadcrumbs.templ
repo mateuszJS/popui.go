@@ -20,6 +20,13 @@ templ Breadcrumbs() {
 	}) {
 		@examples.BreadcrumbsWithChildrenExample()
 	}
+	@modules.Example(modules.ExampleProps{
+		Title:       "With Attributes",
+		Description: "Use Attributes to attach HTMX or other custom attributes to breadcrumb links.",
+		Code:        examples.LoadExample("breadcrumbs_with_attributes.templ"),
+	}) {
+		@examples.BreadcrumbsWithAttributesExample()
+	}
 	@modules.Section("API Reference", "api") {
 		@modules.APITable(modules.APITableProps{
 			Title:       "Breadcrumbs",
