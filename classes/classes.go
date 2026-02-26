@@ -6,11 +6,6 @@ import (
 	"strings"
 )
 
-type Cond struct {
-	Class string
-	Check bool
-}
-
 // Join will join the list of classes together after first filtering to remove
 // any empty strings. Don't forget that the order of classes matters, classes
 // that come later may override classes that come earlier.
