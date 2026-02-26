@@ -16,7 +16,7 @@ templ Popover(opts ...props.Popover) {
 		class={
 			tailwind.Merge(
 				"popover-modal",
-				classes.Join(map[string]bool{"popover-modal-backdrop": p.Backdrop}),
+				classes.If(p.Backdrop, "popover-modal-backdrop"),
 				"border border-border rounded-xl p-6 bg-background w-fit h-fit",
 				p.Class,
 			),

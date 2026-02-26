@@ -21,12 +21,9 @@ templ Table(p ...props.Table) {
 		class={
 			tailwind.Merge(
 				"h-full",
-				classes.Join(map[string]bool{
-					"overflow-x-auto":                    prp.ScrollHorizontal,
-					"overflow-hidden":                    !prp.ScrollHorizontal,
-					"has-[[role=menu]]:overflow-visible": !prp.ScrollHorizontal,
-					"border border-border rounded-lg":    prp.Variant == "card",
-				}),
+				classes.If(prp.ScrollHorizontal, "overflow-x-auto"),
+				classes.If(!prp.ScrollHorizontal, "overflow-hidden has-[[role=menu]]:overflow-visible"),
+				classes.If(prp.Variant == "card", "border border-border rounded-lg"),
 			),
 		}
 	>
@@ -35,11 +32,9 @@ templ Table(p ...props.Table) {
 				id={ prp.ID }
 			}
 			class={ tailwind.Merge(
-				classes.Join(map[string]bool{
-					"table-fixed": true,
-					"w-full":      !prp.ScrollHorizontal,
-					"w-max":       prp.ScrollHorizontal,
-				}),
+				"table-fixed",
+				classes.If(!prp.ScrollHorizontal, "w-full"),
+				classes.If(prp.ScrollHorizontal, "w-max"),
 				"border-collapse border-0 font-sans text-base flex-1 rounded-lg bg-background",
 				"[&_tr]:data-[state=disabled]:opacity-30 [&_tr:last-child_td]:border-b-0",
 				"[&_td>div]:flex [&_td>div]:items-center [&_td>div]:gap-2",

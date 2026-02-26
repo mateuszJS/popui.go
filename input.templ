@@ -85,19 +85,17 @@ templ Input(p ...props.Input) {
 func inputSizeClasses(p props.Input) string {
 	switch p.Size {
 	case props.InputSizeSmall:
-		return classes.Join(map[string]bool{
-			"py-1 pl-1.5 pr-1.5": true,
-			"pl-7":               p.Icon != nil,
-		})
+		return tailwind.Merge(
+			"py-1 pl-1.5 pr-1.5",
+			classes.If(p.Icon != nil, "pl-7"),
+		)
 	case props.InputSizeLarge:
-		return classes.Join(map[string]bool{
-			"py-2 pl-3 pr-3": true,
-			"pl-7":           p.Icon != nil,
-		})
+		return tailwind.Merge(
+			"py-2 pl-3 pr-3",
+			classes.If(p.Icon != nil, "pl-7"),
+		)
 	default:
-		return classes.Join(map[string]bool{
-			"pl-7": p.Icon != nil,
-		})
+		return classes.If(p.Icon != nil, "pl-7")
 	}
 }
 

@@ -40,7 +40,7 @@ func Popover(opts ...props.Popover) templ.Component {
 		p := props.First(opts).GenerateID()
 		var templ_7745c5c3_Var2 = []any{tailwind.Merge(
 			"popover-modal",
-			classes.Join(map[string]bool{"popover-modal-backdrop": p.Backdrop}),
+			classes.If(p.Backdrop, "popover-modal-backdrop"),
 			"border border-border rounded-xl p-6 bg-background w-fit h-fit",
 			p.Class,
 		),

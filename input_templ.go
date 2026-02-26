@@ -292,19 +292,17 @@ func Input(p ...props.Input) templ.Component {
 func inputSizeClasses(p props.Input) string {
 	switch p.Size {
 	case props.InputSizeSmall:
-		return classes.Join(map[string]bool{
-			"py-1 pl-1.5 pr-1.5": true,
-			"pl-7":               p.Icon != nil,
-		})
+		return tailwind.Merge(
+			"py-1 pl-1.5 pr-1.5",
+			classes.If(p.Icon != nil, "pl-7"),
+		)
 	case props.InputSizeLarge:
-		return classes.Join(map[string]bool{
-			"py-2 pl-3 pr-3": true,
-			"pl-7":           p.Icon != nil,
-		})
+		return tailwind.Merge(
+			"py-2 pl-3 pr-3",
+			classes.If(p.Icon != nil, "pl-7"),
+		)
 	default:
-		return classes.Join(map[string]bool{
-			"pl-7": p.Icon != nil,
-		})
+		return classes.If(p.Icon != nil, "pl-7")
 	}
 }
 
@@ -364,7 +362,7 @@ func InputError(e props.Error) templ.Component {
 			var templ_7745c5c3_Var16 string
 			templ_7745c5c3_Var16, templ_7745c5c3_Err = templ.JoinStringErrs(e.Error.Error())
 			if templ_7745c5c3_Err != nil {
-				return templ.Error{Err: templ_7745c5c3_Err, FileName: `input.templ`, Line: 108, Col: 20}
+				return templ.Error{Err: templ_7745c5c3_Err, FileName: `input.templ`, Line: 106, Col: 20}
 			}
 			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var16))
 			if templ_7745c5c3_Err != nil {
@@ -374,7 +372,7 @@ func InputError(e props.Error) templ.Component {
 			var templ_7745c5c3_Var17 string
 			templ_7745c5c3_Var17, templ_7745c5c3_Err = templ.JoinStringErrs(e.Text)
 			if templ_7745c5c3_Err != nil {
-				return templ.Error{Err: templ_7745c5c3_Err, FileName: `input.templ`, Line: 110, Col: 11}
+				return templ.Error{Err: templ_7745c5c3_Err, FileName: `input.templ`, Line: 108, Col: 11}
 			}
 			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var17))
 			if templ_7745c5c3_Err != nil {
