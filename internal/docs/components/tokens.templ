@@ -141,9 +141,9 @@ templ Tokens() {
 			<div class="mb-8">
 				<h3 class="text-base font-medium text-foreground mb-4">Custom Spacing</h3>
 				<div class="grid grid-cols-2 md:grid-cols-3 gap-3">
-					@spacingCard("1.25", "5px")
-					@spacingCard("18", "4.5rem (72px)")
-					@spacingCard("128", "32rem (512px)")
+					@spacingCard("gap-[5px]", "5px")
+					@spacingCard("gap-18", "4.5rem (72px)")
+					@spacingCard("gap-128", "32rem (512px)")
 				</div>
 			</div>
 
@@ -191,24 +191,24 @@ templ Tokens() {
 			<div class="mb-8">
 				<h3 class="text-base font-medium text-foreground mb-4">Text Sizes</h3>
 				<div class="flex flex-col gap-3">
-					@textSizeCard("2xl", "24px", "32px")
-					@textSizeCard("xl", "20px", "28px")
-					@textSizeCard("lg", "16px", "24px")
-					@textSizeCard("md", "15px", "22px")
-					@textSizeCard("base", "14px", "20px")
-					@textSizeCard("sm", "12px", "16px")
-					@textSizeCard("xs", "10px", "12px")
+					@textSizeCard("text-2xl", "24px", "32px")
+					@textSizeCard("text-xl", "20px", "28px")
+					@textSizeCard("text-lg", "16px", "24px")
+					@textSizeCard("text-md", "15px", "22px")
+					@textSizeCard("text-base", "14px", "20px")
+					@textSizeCard("text-sm", "12px", "16px")
+					@textSizeCard("text-xs", "10px", "12px")
 				</div>
 			</div>
 
 			<div>
 				<h3 class="text-base font-medium text-foreground mb-4">Letter Spacing</h3>
 				<div class="flex flex-col gap-3">
-					@trackingCard("tightest", "-0.29px", "text-2xl")
-					@trackingCard("tighter", "-0.24px", "text-xl")
-					@trackingCard("tight", "-0.16px", "text-lg")
-					@trackingCard("normal", "-0.07px", "text-base")
-					@trackingCard("wide", "-0.036px", "text-sm")
+					@trackingCard("tracking-tightest", "-0.29px", "text-2xl")
+					@trackingCard("tracking-tighter", "-0.24px", "text-xl")
+					@trackingCard("tracking-tight", "-0.16px", "text-lg")
+					@trackingCard("tracking-normal", "-0.07px", "text-base")
+					@trackingCard("tracking-wide", "-0.036px", "text-sm")
 				</div>
 			</div>
 		}
@@ -327,13 +327,13 @@ templ tokenBorderCard(name, description, className, cssVar string) {
 	</div>
 }
 
-templ spacingCard(name, value string) {
+templ spacingCard(className, value string) {
 	<div
 		class="flex flex-col gap-2 p-4 rounded-xl border border-border hover:border-border-default-secondary cursor-pointer transition-all"
-		x-data={ "{copied: false, copy() { navigator.clipboard.writeText('gap-" + name + "'); this.copied = true; setTimeout(() => this.copied = false, 1500); }}" }
+		x-data={ "{copied: false, copy() { navigator.clipboard.writeText('" + className + "'); this.copied = true; setTimeout(() => this.copied = false, 1500); }}" }
 		@click="copy()"
 	>
-		<div class="text-sm font-medium text-foreground" x-show="!copied">{ name }</div>
+		<div class="text-sm font-medium text-foreground" x-show="!copied">{ className }</div>
 		<div class="text-sm font-medium text-foreground-success" x-show="copied" x-cloak>Copied</div>
 		<div class="text-xs text-foreground-default-secondary">{ value }</div>
 	</div>
@@ -405,37 +405,37 @@ templ fontWeightCard(className, weight string) {
 	</div>
 }
 
-templ textSizeCard(name, size, lineHeight string) {
+templ textSizeCard(className, size, lineHeight string) {
 	<div
 		class="flex items-center gap-4 p-4 rounded-xl border border-border hover:border-border-default-secondary cursor-pointer transition-all"
-		x-data={ "{copied: false, copy() { navigator.clipboard.writeText('text-" + name + "'); this.copied = true; setTimeout(() => this.copied = false, 1500); }}" }
+		x-data={ "{copied: false, copy() { navigator.clipboard.writeText('" + className + "'); this.copied = true; setTimeout(() => this.copied = false, 1500); }}" }
 		@click="copy()"
 	>
 		<div class="w-25 flex-shrink-0">
-			<div class="text-sm font-medium text-foreground" x-show="!copied">text-{ name }</div>
+			<div class="text-sm font-medium text-foreground" x-show="!copied">{ className }</div>
 			<div class="text-sm font-medium text-foreground-success" x-show="copied" x-cloak>Copied</div>
 		</div>
 		<div class="text-xs text-foreground-default-secondary w-24 flex-shrink-0">
 			{ size } / { lineHeight }
 		</div>
-		<div class={ "text-foreground text-" + name }>The quick brown fox</div>
+		<div class={ "text-foreground " + className }>The quick brown fox</div>
 	</div>
 }
 
-templ trackingCard(name, value, textClass string) {
+templ trackingCard(className, value, textClass string) {
 	<div
 		class="flex items-center gap-4 p-4 rounded-xl border border-border hover:border-border-default-secondary cursor-pointer transition-all"
-		x-data={ "{copied: false, copy() { navigator.clipboard.writeText('tracking-" + name + "'); this.copied = true; setTimeout(() => this.copied = false, 1500); }}" }
+		x-data={ "{copied: false, copy() { navigator.clipboard.writeText('" + className + "'); this.copied = true; setTimeout(() => this.copied = false, 1500); }}" }
 		@click="copy()"
 	>
 		<div class="w-25 flex-shrink-0">
-			<div class="text-sm font-medium text-foreground whitespace-nowrap" x-show="!copied">tracking-{ name }</div>
+			<div class="text-sm font-medium text-foreground whitespace-nowrap" x-show="!copied">{ className }</div>
 			<div class="text-sm font-medium text-foreground-success" x-show="copied" x-cloak>Copied</div>
 		</div>
 		<div class="text-xs text-foreground-default-secondary w-28 flex-shrink-0">
 			{ value } / for { textClass }
 		</div>
-		<div class={ "text-foreground tracking-" + name + " " + textClass }>The quick brown fox</div>
+		<div class={ "text-foreground " + className + " " + textClass }>The quick brown fox</div>
 	</div>
 }
 

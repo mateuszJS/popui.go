@@ -419,15 +419,15 @@ func Tokens() templ.Component {
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			templ_7745c5c3_Err = spacingCard("1.25", "5px").Render(ctx, templ_7745c5c3_Buffer)
+			templ_7745c5c3_Err = spacingCard("gap-[5px]", "5px").Render(ctx, templ_7745c5c3_Buffer)
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			templ_7745c5c3_Err = spacingCard("18", "4.5rem (72px)").Render(ctx, templ_7745c5c3_Buffer)
+			templ_7745c5c3_Err = spacingCard("gap-18", "4.5rem (72px)").Render(ctx, templ_7745c5c3_Buffer)
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			templ_7745c5c3_Err = spacingCard("128", "32rem (512px)").Render(ctx, templ_7745c5c3_Buffer)
+			templ_7745c5c3_Err = spacingCard("gap-128", "32rem (512px)").Render(ctx, templ_7745c5c3_Buffer)
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
@@ -551,31 +551,31 @@ func Tokens() templ.Component {
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			templ_7745c5c3_Err = textSizeCard("2xl", "24px", "32px").Render(ctx, templ_7745c5c3_Buffer)
+			templ_7745c5c3_Err = textSizeCard("text-2xl", "24px", "32px").Render(ctx, templ_7745c5c3_Buffer)
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			templ_7745c5c3_Err = textSizeCard("xl", "20px", "28px").Render(ctx, templ_7745c5c3_Buffer)
+			templ_7745c5c3_Err = textSizeCard("text-xl", "20px", "28px").Render(ctx, templ_7745c5c3_Buffer)
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			templ_7745c5c3_Err = textSizeCard("lg", "16px", "24px").Render(ctx, templ_7745c5c3_Buffer)
+			templ_7745c5c3_Err = textSizeCard("text-lg", "16px", "24px").Render(ctx, templ_7745c5c3_Buffer)
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			templ_7745c5c3_Err = textSizeCard("md", "15px", "22px").Render(ctx, templ_7745c5c3_Buffer)
+			templ_7745c5c3_Err = textSizeCard("text-md", "15px", "22px").Render(ctx, templ_7745c5c3_Buffer)
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			templ_7745c5c3_Err = textSizeCard("base", "14px", "20px").Render(ctx, templ_7745c5c3_Buffer)
+			templ_7745c5c3_Err = textSizeCard("text-base", "14px", "20px").Render(ctx, templ_7745c5c3_Buffer)
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			templ_7745c5c3_Err = textSizeCard("sm", "12px", "16px").Render(ctx, templ_7745c5c3_Buffer)
+			templ_7745c5c3_Err = textSizeCard("text-sm", "12px", "16px").Render(ctx, templ_7745c5c3_Buffer)
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			templ_7745c5c3_Err = textSizeCard("xs", "10px", "12px").Render(ctx, templ_7745c5c3_Buffer)
+			templ_7745c5c3_Err = textSizeCard("text-xs", "10px", "12px").Render(ctx, templ_7745c5c3_Buffer)
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
@@ -583,23 +583,23 @@ func Tokens() templ.Component {
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			templ_7745c5c3_Err = trackingCard("tightest", "-0.29px", "text-2xl").Render(ctx, templ_7745c5c3_Buffer)
+			templ_7745c5c3_Err = trackingCard("tracking-tightest", "-0.29px", "text-2xl").Render(ctx, templ_7745c5c3_Buffer)
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			templ_7745c5c3_Err = trackingCard("tighter", "-0.24px", "text-xl").Render(ctx, templ_7745c5c3_Buffer)
+			templ_7745c5c3_Err = trackingCard("tracking-tighter", "-0.24px", "text-xl").Render(ctx, templ_7745c5c3_Buffer)
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			templ_7745c5c3_Err = trackingCard("tight", "-0.16px", "text-lg").Render(ctx, templ_7745c5c3_Buffer)
+			templ_7745c5c3_Err = trackingCard("tracking-tight", "-0.16px", "text-lg").Render(ctx, templ_7745c5c3_Buffer)
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			templ_7745c5c3_Err = trackingCard("normal", "-0.07px", "text-base").Render(ctx, templ_7745c5c3_Buffer)
+			templ_7745c5c3_Err = trackingCard("tracking-normal", "-0.07px", "text-base").Render(ctx, templ_7745c5c3_Buffer)
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			templ_7745c5c3_Err = trackingCard("wide", "-0.036px", "text-sm").Render(ctx, templ_7745c5c3_Buffer)
+			templ_7745c5c3_Err = trackingCard("tracking-wide", "-0.036px", "text-sm").Render(ctx, templ_7745c5c3_Buffer)
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
@@ -1073,7 +1073,7 @@ func tokenBorderCard(name, description, className, cssVar string) templ.Componen
 	})
 }
 
-func spacingCard(name, value string) templ.Component {
+func spacingCard(className, value string) templ.Component {
 	return templruntime.GeneratedTemplate(func(templ_7745c5c3_Input templruntime.GeneratedComponentInput) (templ_7745c5c3_Err error) {
 		templ_7745c5c3_W, ctx := templ_7745c5c3_Input.Writer, templ_7745c5c3_Input.Context
 		if templ_7745c5c3_CtxErr := ctx.Err(); templ_7745c5c3_CtxErr != nil {
@@ -1099,9 +1099,9 @@ func spacingCard(name, value string) templ.Component {
 			return templ_7745c5c3_Err
 		}
 		var templ_7745c5c3_Var31 string
-		templ_7745c5c3_Var31, templ_7745c5c3_Err = templ.JoinStringErrs("{copied: false, copy() { navigator.clipboard.writeText('gap-" + name + "'); this.copied = true; setTimeout(() => this.copied = false, 1500); }}")
+		templ_7745c5c3_Var31, templ_7745c5c3_Err = templ.JoinStringErrs("{copied: false, copy() { navigator.clipboard.writeText('" + className + "'); this.copied = true; setTimeout(() => this.copied = false, 1500); }}")
 		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/docs/components/tokens.templ`, Line: 333, Col: 156}
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/docs/components/tokens.templ`, Line: 333, Col: 157}
 		}
 		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var31))
 		if templ_7745c5c3_Err != nil {
@@ -1112,9 +1112,9 @@ func spacingCard(name, value string) templ.Component {
 			return templ_7745c5c3_Err
 		}
 		var templ_7745c5c3_Var32 string
-		templ_7745c5c3_Var32, templ_7745c5c3_Err = templ.JoinStringErrs(name)
+		templ_7745c5c3_Var32, templ_7745c5c3_Err = templ.JoinStringErrs(className)
 		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/docs/components/tokens.templ`, Line: 336, Col: 74}
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/docs/components/tokens.templ`, Line: 336, Col: 79}
 		}
 		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var32))
 		if templ_7745c5c3_Err != nil {
@@ -1547,7 +1547,7 @@ func fontWeightCard(className, weight string) templ.Component {
 	})
 }
 
-func textSizeCard(name, size, lineHeight string) templ.Component {
+func textSizeCard(className, size, lineHeight string) templ.Component {
 	return templruntime.GeneratedTemplate(func(templ_7745c5c3_Input templruntime.GeneratedComponentInput) (templ_7745c5c3_Err error) {
 		templ_7745c5c3_W, ctx := templ_7745c5c3_Input.Writer, templ_7745c5c3_Input.Context
 		if templ_7745c5c3_CtxErr := ctx.Err(); templ_7745c5c3_CtxErr != nil {
@@ -1573,7 +1573,7 @@ func textSizeCard(name, size, lineHeight string) templ.Component {
 			return templ_7745c5c3_Err
 		}
 		var templ_7745c5c3_Var62 string
-		templ_7745c5c3_Var62, templ_7745c5c3_Err = templ.JoinStringErrs("{copied: false, copy() { navigator.clipboard.writeText('text-" + name + "'); this.copied = true; setTimeout(() => this.copied = false, 1500); }}")
+		templ_7745c5c3_Var62, templ_7745c5c3_Err = templ.JoinStringErrs("{copied: false, copy() { navigator.clipboard.writeText('" + className + "'); this.copied = true; setTimeout(() => this.copied = false, 1500); }}")
 		if templ_7745c5c3_Err != nil {
 			return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/docs/components/tokens.templ`, Line: 411, Col: 157}
 		}
@@ -1581,12 +1581,12 @@ func textSizeCard(name, size, lineHeight string) templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 92, "\" @click=\"copy()\"><div class=\"w-25 flex-shrink-0\"><div class=\"text-sm font-medium text-foreground\" x-show=\"!copied\">text-")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 92, "\" @click=\"copy()\"><div class=\"w-25 flex-shrink-0\"><div class=\"text-sm font-medium text-foreground\" x-show=\"!copied\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
 		var templ_7745c5c3_Var63 string
-		templ_7745c5c3_Var63, templ_7745c5c3_Err = templ.JoinStringErrs(name)
+		templ_7745c5c3_Var63, templ_7745c5c3_Err = templ.JoinStringErrs(className)
 		if templ_7745c5c3_Err != nil {
 			return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/docs/components/tokens.templ`, Line: 415, Col: 80}
 		}
@@ -1624,7 +1624,7 @@ func textSizeCard(name, size, lineHeight string) templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		var templ_7745c5c3_Var66 = []any{"text-foreground text-" + name}
+		var templ_7745c5c3_Var66 = []any{"text-foreground " + className}
 		templ_7745c5c3_Err = templ.RenderCSSItems(ctx, templ_7745c5c3_Buffer, templ_7745c5c3_Var66...)
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
@@ -1650,7 +1650,7 @@ func textSizeCard(name, size, lineHeight string) templ.Component {
 	})
 }
 
-func trackingCard(name, value, textClass string) templ.Component {
+func trackingCard(className, value, textClass string) templ.Component {
 	return templruntime.GeneratedTemplate(func(templ_7745c5c3_Input templruntime.GeneratedComponentInput) (templ_7745c5c3_Err error) {
 		templ_7745c5c3_W, ctx := templ_7745c5c3_Input.Writer, templ_7745c5c3_Input.Context
 		if templ_7745c5c3_CtxErr := ctx.Err(); templ_7745c5c3_CtxErr != nil {
@@ -1676,22 +1676,22 @@ func trackingCard(name, value, textClass string) templ.Component {
 			return templ_7745c5c3_Err
 		}
 		var templ_7745c5c3_Var69 string
-		templ_7745c5c3_Var69, templ_7745c5c3_Err = templ.JoinStringErrs("{copied: false, copy() { navigator.clipboard.writeText('tracking-" + name + "'); this.copied = true; setTimeout(() => this.copied = false, 1500); }}")
+		templ_7745c5c3_Var69, templ_7745c5c3_Err = templ.JoinStringErrs("{copied: false, copy() { navigator.clipboard.writeText('" + className + "'); this.copied = true; setTimeout(() => this.copied = false, 1500); }}")
 		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/docs/components/tokens.templ`, Line: 428, Col: 161}
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/docs/components/tokens.templ`, Line: 428, Col: 157}
 		}
 		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var69))
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 99, "\" @click=\"copy()\"><div class=\"w-25 flex-shrink-0\"><div class=\"text-sm font-medium text-foreground whitespace-nowrap\" x-show=\"!copied\">tracking-")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 99, "\" @click=\"copy()\"><div class=\"w-25 flex-shrink-0\"><div class=\"text-sm font-medium text-foreground whitespace-nowrap\" x-show=\"!copied\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
 		var templ_7745c5c3_Var70 string
-		templ_7745c5c3_Var70, templ_7745c5c3_Err = templ.JoinStringErrs(name)
+		templ_7745c5c3_Var70, templ_7745c5c3_Err = templ.JoinStringErrs(className)
 		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/docs/components/tokens.templ`, Line: 432, Col: 102}
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/docs/components/tokens.templ`, Line: 432, Col: 98}
 		}
 		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var70))
 		if templ_7745c5c3_Err != nil {
@@ -1727,7 +1727,7 @@ func trackingCard(name, value, textClass string) templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		var templ_7745c5c3_Var73 = []any{"text-foreground tracking-" + name + " " + textClass}
+		var templ_7745c5c3_Var73 = []any{"text-foreground " + className + " " + textClass}
 		templ_7745c5c3_Err = templ.RenderCSSItems(ctx, templ_7745c5c3_Buffer, templ_7745c5c3_Var73...)
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
