@@ -442,7 +442,7 @@ templ trackingCard(className, value, textClass string) {
 templ statusTokenCard(name, description, fgVar, bgVar, iconVar string) {
 	<div
 		class="flex items-center gap-4 p-4 rounded-xl border border-border hover:border-border-default-secondary cursor-pointer transition-all"
-		x-data={ "{copied: false, copy() { navigator.clipboard.writeText('status-" + name + "'); this.copied = true; setTimeout(() => this.copied = false, 1500); }}" }
+		x-data={ "{copied: false, copy() { navigator.clipboard.writeText('" + fgVar + ", " + bgVar + ", " + iconVar + "'); this.copied = true; setTimeout(() => this.copied = false, 1500); }}" }
 		@click="copy()"
 	>
 		<div class="flex items-center gap-2 flex-shrink-0">
