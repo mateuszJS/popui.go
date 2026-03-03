@@ -34,6 +34,12 @@ var groups = []*Group{
 				Path:     "icons",
 				Template: components.Icons(),
 			},
+			{
+				Title:    "Tokens",
+				Desc:     "Tailwind CSS design tokens including colors, spacing, shadows, and typography.",
+				Path:     "tokens",
+				Template: components.Tokens(),
+			},
 		},
 	},
 	{
