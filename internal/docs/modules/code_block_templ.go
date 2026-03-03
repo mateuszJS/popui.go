@@ -43,7 +43,9 @@ func CodeBlock(props CodeBlockProps) templ.Component {
 		ctx = templ.ClearChildren(ctx)
 		code := strings.TrimSpace(props.Code)
 		if code != "" {
-			var templ_7745c5c3_Var2 = []any{"w-full !border-0 bg-background-default-secondary overflow-hidden font-mono text-[13px] tracking-[-0.039px] m-0 leading-[1.6] relative rounded-b-xl lg:rounded-b-none lg:rounded-r-xl rounded-tl-none rounded-bl-none"}
+			var templ_7745c5c3_Var2 = []any{"w-full !border-0 bg-background-default-secondary overflow-hidden font-mono text-[13px] tracking-[-0.039px] m-0 leading-[1.6] relative rounded-t-none rounded-b-xl",
+				templ.KV("lg:rounded-b-none lg:rounded-r-xl lg:rounded-tl-none lg:rounded-bl-none", props.Side),
+			}
 			templ_7745c5c3_Err = templ.RenderCSSItems(ctx, templ_7745c5c3_Buffer, templ_7745c5c3_Var2...)
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
@@ -89,7 +91,7 @@ func CodeBlock(props CodeBlockProps) templ.Component {
 				var templ_7745c5c3_Var4 string
 				templ_7745c5c3_Var4, templ_7745c5c3_Err = templ.JoinStringErrs(fmt.Sprint(i + 1))
 				if templ_7745c5c3_Err != nil {
-					return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/docs/modules/code_block.templ`, Line: 38, Col: 31}
+					return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/docs/modules/code_block.templ`, Line: 39, Col: 31}
 				}
 				_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var4))
 				if templ_7745c5c3_Err != nil {
@@ -129,7 +131,7 @@ func CodeBlock(props CodeBlockProps) templ.Component {
 			var templ_7745c5c3_Var7 string
 			templ_7745c5c3_Var7, templ_7745c5c3_Err = templ.JoinStringErrs(code)
 			if templ_7745c5c3_Err != nil {
-				return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/docs/modules/code_block.templ`, Line: 40, Col: 139}
+				return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/docs/modules/code_block.templ`, Line: 41, Col: 139}
 			}
 			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var7))
 			if templ_7745c5c3_Err != nil {
