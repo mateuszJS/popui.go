@@ -83,13 +83,11 @@ func (s *buildOpts) run(_ *cobra.Command, _ []string) error {
 	if err != nil {
 		log.Fatalf("Error: %v", err)
 	}
-	for _, script := range []string{"docs.js", "docs-components.js"} {
-		err = copyFile(path.Join("internal/docs/assets/scripts", script), path.Join(scriptsOutPath, script))
-		if err != nil {
-			log.Fatalf("Error: %v", err)
-		}
-		log.Printf("%s published", script)
+	err = copyFile(path.Join("internal/docs/assets/scripts", "docs.js"), path.Join(scriptsOutPath, "docs.js"))
+	if err != nil {
+		log.Fatalf("Error: %v", err)
 	}
+	log.Printf("Docs JS file published")
 
 	return nil
 }
