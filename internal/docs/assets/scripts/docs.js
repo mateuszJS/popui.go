@@ -65,9 +65,9 @@ document.addEventListener("alpine:init", () => {
     },
   }));
 
-  Alpine.data("copyable", (text) => ({
+  Alpine.data("copyable", () => ({
     copied: false,
-    copy() {
+    copy(text) {
       navigator.clipboard.writeText(text);
       this.copied = true;
       setTimeout(() => (this.copied = false), 1500);

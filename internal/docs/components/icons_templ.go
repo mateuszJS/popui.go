@@ -78,8 +78,8 @@ func iconCard(name string, icon templ.Component) templ.Component {
 		templ_7745c5c3_Err = popui.Card(props.Card{
 			Class: "items-center justify-center aspect-square !p-2 cursor-pointer transition-all group hover:border-border-default-secondary",
 			Attributes: templ.Attributes{
-				"x-data": "copyable('@icons." + name + "()')",
-				"@click": "copy()",
+				"x-data": "copyable",
+				"@click": "copy('@icons." + name + "()')",
 			},
 		}).Render(templ.WithChildren(ctx, templ_7745c5c3_Var2), templ_7745c5c3_Buffer)
 		if templ_7745c5c3_Err != nil {
