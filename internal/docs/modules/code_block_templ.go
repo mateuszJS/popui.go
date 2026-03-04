@@ -23,7 +23,7 @@ type CodeBlockProps struct {
 
 func codeBlockPreClass(side bool) string {
 	return classes.Join(
-		"w-full !border-0 bg-background-default-secondary overflow-hidden font-mono text-[13px] tracking-[-0.039px] m-0 leading-[1.6] relative",
+		"w-full h-full !border-0 bg-background-default-secondary font-mono text-[13px] tracking-[-0.039px] m-0 leading-[1.6] relative",
 		classes.If(side, "rounded-b-xl lg:rounded-b-none lg:rounded-r-xl rounded-tl-none rounded-bl-none"),
 		classes.If(!side, "rounded-xl"),
 	)
@@ -126,7 +126,7 @@ func CodeBlock(props CodeBlockProps) templ.Component {
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			var templ_7745c5c3_Var6 = []any{"flex-1 min-w-0 overflow-x-auto block p-0 bg-transparent border-0 rounded-none language-" + props.Language}
+			var templ_7745c5c3_Var6 = []any{"flex-1 min-w-0 block p-0 bg-transparent border-0 rounded-none language-" + props.Language}
 			templ_7745c5c3_Err = templ.RenderCSSItems(ctx, templ_7745c5c3_Buffer, templ_7745c5c3_Var6...)
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
@@ -151,7 +151,7 @@ func CodeBlock(props CodeBlockProps) templ.Component {
 			var templ_7745c5c3_Var8 string
 			templ_7745c5c3_Var8, templ_7745c5c3_Err = templ.JoinStringErrs(code)
 			if templ_7745c5c3_Err != nil {
-				return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/docs/modules/code_block.templ`, Line: 50, Col: 139}
+				return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/docs/modules/code_block.templ`, Line: 50, Col: 123}
 			}
 			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var8))
 			if templ_7745c5c3_Err != nil {

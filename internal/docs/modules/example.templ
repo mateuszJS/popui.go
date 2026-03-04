@@ -54,43 +54,43 @@ templ Example(props ExampleProps) {
 					</template>
 				</div>
 			</div>
-			<div
-				class={
-					"flex-1 min-w-0",
-					templ.KV("lg:max-w-[50%]", !props.Stacked),
-				}
-			>
-				@CodeBlock(CodeBlockProps{
-					Language: language,
-					Code:     props.Code,
-					Side:     !props.Stacked,
-				})
-			</div>
-		</div>
-	} else {
 		<div
 			class={
-				"flex flex-col overflow-hidden rounded-xl border border-border-default-secondary",
-				templ.KV("lg:flex-row max-h-[800px]", !props.Stacked),
+				"flex-1 min-w-0 min-h-0 overflow-auto",
+				templ.KV("lg:max-w-[50%]", !props.Stacked),
 			}
 		>
-			<div class="flex-1 min-w-0">
-				@PreviewBox() {
-					{ children... }
-				}
-			</div>
-			<div
-				class={
-					"flex-1 min-w-0",
-					templ.KV("lg:max-w-[50%]", !props.Stacked),
-				}
-			>
-				@CodeBlock(CodeBlockProps{
-					Language: language,
-					Code:     props.Code,
-					Side:     !props.Stacked,
-				})
-			</div>
+			@CodeBlock(CodeBlockProps{
+				Language: language,
+				Code:     props.Code,
+				Side:     !props.Stacked,
+			})
+		</div>
+	</div>
+	} else {
+	<div
+		class={
+			"flex flex-col overflow-hidden rounded-xl border border-border-default-secondary",
+			templ.KV("lg:flex-row max-h-[800px]", !props.Stacked),
+		}
+	>
+		<div class="flex-1 min-w-0 min-h-0">
+			@PreviewBox() {
+				{ children... }
+			}
+		</div>
+		<div
+			class={
+				"flex-1 min-w-0 min-h-0 overflow-auto",
+				templ.KV("lg:max-w-[50%]", !props.Stacked),
+			}
+		>
+			@CodeBlock(CodeBlockProps{
+				Language: language,
+				Code:     props.Code,
+				Side:     !props.Stacked,
+			})
+		</div>
 		</div>
 	}
 	</div>
