@@ -773,12 +773,12 @@ func darkModeToggle() templ.Component {
 			}()
 		}
 		ctx = templ.InitializeContext(ctx)
-		templ_7745c5c3_Var27 := templ.GetChildren(ctx)
-		if templ_7745c5c3_Var27 == nil {
-			templ_7745c5c3_Var27 = templ.NopComponent
+		templ_7745c5c3_Var33 := templ.GetChildren(ctx)
+		if templ_7745c5c3_Var33 == nil {
+			templ_7745c5c3_Var33 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 14, "<button x-data=\"darkModeToggle\" @click=\"toggle\" class=\"flex items-center justify-center size-8 -mr-2 rounded-lg text-icon-default-secondary hover:text-icon hover:bg-background-default-secondary transition-colors cursor-pointer\" title=\"Toggle dark mode\"><div class=\"transition-transform duration-300\" :class=\"{ 'rotate-180': dark }\">")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 18, "<button x-data=\"darkModeToggle\" @click=\"toggle\" class=\"flex items-center justify-center size-8 -mr-2 rounded-lg text-icon-default-secondary hover:text-icon hover:bg-background-default-secondary transition-colors cursor-pointer\" title=\"Toggle dark mode\"><div class=\"transition-transform duration-300\" :class=\"{ 'rotate-180': dark }\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -786,7 +786,7 @@ func darkModeToggle() templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 15, "</div></button>")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 19, "</div></button>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}

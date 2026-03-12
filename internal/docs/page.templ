@@ -136,12 +136,14 @@ templ article(id, title, description string) {
 	}) {
 		<div class="w-full max-w-[1440px] mx-auto pt-2 pb-16">
 			<div class="space-y-8">
-				<div class="space-y-1.5">
-					<h1 class="text-2xl font-bold">{ title }</h1>
-					<p class="text-lg text-foreground-default-secondary">
-						{ description }
-					</p>
-				</div>
+			<div class="space-y-1.5">
+				@popui.Title(props.Title{Class: "text-2xl font-bold"}) {
+					{ title }
+				}
+				@popui.Description(props.Description{Class: "text-lg"}) {
+					{ description }
+				}
+			</div>
 				{ children... }
 			</div>
 		</div>
@@ -149,11 +151,23 @@ templ article(id, title, description string) {
 }
 
 templ sidebar() {
-	@popui.Sidebar(props.Sidebar{Title: "PopUI Documentation"}) {
+	@popui.Sidebar(props.Sidebar{
+		Title: "PopUI Documentation",
+	}) {
 		@popui.SidebarHeader() {
-			<a href="/">
+			<a href="/" class="flex-1">
 				@popui.PopuiLogo()
 			</a>
+		@popui.Button(props.Button{
+			Variant: props.ButtonVariantTransparent,
+			Size:    props.ButtonSizeIcon,
+			Class:   "-mr-1",
+			Attributes: templ.Attributes{
+				"data-sidebar-hide": "",
+			},
+		}) {
+			@icons.SidebarHide()
+		}
 		}
 		@popui.SidebarContent() {
 			@popui.SidebarSection(props.SidebarSection{Title: "Overview"}) {
