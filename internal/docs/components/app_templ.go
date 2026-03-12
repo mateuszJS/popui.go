@@ -75,6 +75,16 @@ func App() templ.Component {
 			return templ_7745c5c3_Err
 		}
 		templ_7745c5c3_Err = modules.Example(modules.ExampleProps{
+			Title:         "App with Dark Sidebar Navigation",
+			Description:   "App layout with a dark-themed sidebar using the \"dark\" variant for inverse colors.",
+			Code:          examples.LoadExample("app_with_dark_sidebar.templ"),
+			IframeContent: examples.AppWithDarkSidebarExample(),
+			Stacked:       true,
+		}).Render(ctx, templ_7745c5c3_Buffer)
+		if templ_7745c5c3_Err != nil {
+			return templ_7745c5c3_Err
+		}
+		templ_7745c5c3_Err = modules.Example(modules.ExampleProps{
 			Title:         "App with table and pagination",
 			Description:   "App layout that includes a full width table and pagination in the main content area.",
 			Code:          examples.LoadExample("app_with_table.templ"),
@@ -254,6 +264,7 @@ func App() templ.Component {
 				Items: []modules.APITableItem{
 					{Name: "Title", Type: "string", Default: "", Description: "Title for the sidebar (currently unused in rendering, reserved for accessibility)"},
 					{Name: "Class", Type: "string", Default: "", Description: "Additional CSS classes to merge with sidebar styles"},
+					{Name: "Variant", Type: "string", Default: "", Description: "Visual style variant. Use \"dark\" for a dark background with inverse text and border colors."},
 					{Name: "Attributes", Type: "templ.Attributes", Default: "", Description: "Additional HTML attributes"},
 				},
 			}).Render(ctx, templ_7745c5c3_Buffer)

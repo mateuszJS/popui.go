@@ -150,6 +150,50 @@ form {
   @apply text-foreground-default-secondary;
 }
 
+/* Sidebar Dark Variant */
+.sidebar-dark {
+  background-color: var(--color-background-default-bold);
+  border-color: var(--color-border-inverse-default);
+}
+
+.sidebar-dark > div:first-child {
+  border-color: var(--color-border-inverse-default);
+  color: var(--color-foreground-inverse-default);
+}
+
+.sidebar-dark > div:last-child {
+  border-color: var(--color-border-inverse-default);
+}
+
+.sidebar-dark p {
+  color: var(--color-foreground-inverse-secondary);
+}
+
+.sidebar-dark ul li a {
+  color: var(--color-foreground-inverse-default);
+}
+
+.sidebar-dark ul li a:hover {
+  background-color: var(--color-background-selected-inverse-hover);
+}
+
+.sidebar-dark ul li a svg *[stroke] {
+  stroke: var(--color-icon-inverse-default);
+}
+.sidebar-dark ul li a svg *[fill] {
+  fill: var(--color-icon-inverse-default);
+}
+
+.sidebar-dark ul li a.bg-background-default-secondary {
+  background-color: var(--color-background-selected-inverse);
+  border: 1px solid var(--color-border-inverse-default);
+}
+
+.sidebar-dark > .grow-0 {
+  border-color: var(--color-border-inverse-default);
+  color: var(--color-foreground-inverse-default);
+}
+
 /* Flash message animation */
 @keyframes flashMessage {
   0% {

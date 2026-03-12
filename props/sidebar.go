@@ -2,10 +2,16 @@ package props
 
 import "github.com/a-h/templ"
 
+// SidebarVariant constants
+const (
+	SidebarVariantDark string = "dark"
+)
+
 // Sidebar Templ component props
 type Sidebar struct {
-	Title string
-	Class string
+	Title      string
+	Class      string
+	Variant    string // "dark" for dark background variant, default is light
 	Attributes templ.Attributes
 }
 

@@ -39,6 +39,7 @@ func Sidebar(opts ...props.Sidebar) templ.Component {
 		p := props.First(opts)
 		var templ_7745c5c3_Var2 = []any{tailwind.Merge(
 			"h-full w-0 md:w-[240px] invisible md:visible bg-background flex flex-col items-center gap-0 transition-[width] ease-in-out duration-300 border-r border-border [&_ul_li_a]:whitespace-nowrap [&_ul_li_a]:overflow-hidden [&_ul_li_a_div]:shrink-0",
+			classes.If(p.Variant == props.SidebarVariantDark, "sidebar-dark"),
 			p.Class,
 		),
 		}
@@ -105,7 +106,7 @@ func SidebarHeader() templ.Component {
 			templ_7745c5c3_Var4 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 5, "<div class=\"w-full flex p-4 items-center gap-2 border-b border-border text-foreground font-sans text-base font-semibold whitespace-nowrap h-12 [&_div]:!w-7 [&_div]:!h-7\">")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 5, "<div class=\"w-full flex pl-5 pr-3 py-3 items-center gap-2 border-b border-border text-foreground font-sans text-base font-semibold whitespace-nowrap h-12 [&_div]:!w-7 [&_div]:!h-7\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -143,7 +144,7 @@ func SidebarContent() templ.Component {
 			templ_7745c5c3_Var5 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 7, "<div class=\"w-full flex grow py-5 px-3 flex-col items-center gap-4 overflow-y-auto\">")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 7, "<div class=\"w-full flex grow pt-5 pb-3 px-3 flex-col items-center gap-6 overflow-y-auto\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -184,7 +185,7 @@ func SidebarSection(opts ...props.SidebarSection) templ.Component {
 		ctx = templ.ClearChildren(ctx)
 		p := props.First(opts)
 		var templ_7745c5c3_Var7 = []any{tailwind.Merge(
-			"w-full flex flex-col items-start gap-2 [&_p]:text-foreground-default-secondary [&_p]:font-sans [&_p]:text-sm [&_p]:font-medium [&_p]:indent-2 [&_ul]:flex [&_ul]:flex-col [&_ul]:items-start [&_ul]:w-full [&_ul]:gap-1.5 [&_ul_li]:w-full [&_a]:w-full [&_a]:flex [&_a]:py-1.5 [&_a]:px-2 [&_a]:items-center [&_a]:gap-1.5 [&_a]:rounded-lg [&_a]:text-foreground [&_a]:font-sans [&_a]:text-base [&_a]:font-medium [&_a:hover]:bg-background-default-secondary [&_svg_*[stroke]]:stroke-[var(--color-icon-default-default)] [&_svg_*[fill]]:fill-[var(--color-icon-default-default)]",
+			"w-full flex flex-col items-start gap-2 [&_p]:text-foreground-default-secondary [&_p]:font-sans [&_p]:text-sm [&_p]:font-medium [&_p]:indent-2 [&_ul]:flex [&_ul]:flex-col [&_ul]:items-start [&_ul]:w-full [&_ul]:gap-0.5 [&_ul_li]:w-full [&_a]:w-full [&_a]:flex [&_a]:py-1.5 [&_a]:px-2 [&_a]:items-center [&_a]:gap-1.5 [&_a]:rounded-lg [&_a]:text-foreground [&_a]:font-sans [&_a]:text-base [&_a]:font-medium [&_a:hover]:bg-background-default-secondary [&_svg_*[stroke]]:stroke-[var(--color-icon-default-default)] [&_svg_*[fill]]:fill-[var(--color-icon-default-default)]",
 			p.Class,
 		),
 		}
@@ -225,7 +226,7 @@ func SidebarSection(opts ...props.SidebarSection) templ.Component {
 			var templ_7745c5c3_Var9 string
 			templ_7745c5c3_Var9, templ_7745c5c3_Err = templ.JoinStringErrs(p.Title)
 			if templ_7745c5c3_Err != nil {
-				return templ.Error{Err: templ_7745c5c3_Err, FileName: `sidebar.templ`, Line: 54, Col: 15}
+				return templ.Error{Err: templ_7745c5c3_Err, FileName: `sidebar.templ`, Line: 55, Col: 15}
 			}
 			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var9))
 			if templ_7745c5c3_Err != nil {
@@ -304,7 +305,7 @@ func SidebarItem(opts ...props.SidebarItem) templ.Component {
 			var templ_7745c5c3_Var12 string
 			templ_7745c5c3_Var12, templ_7745c5c3_Err = templ.JoinStringErrs(p.ID)
 			if templ_7745c5c3_Err != nil {
-				return templ.Error{Err: templ_7745c5c3_Err, FileName: `sidebar.templ`, Line: 72, Col: 13}
+				return templ.Error{Err: templ_7745c5c3_Err, FileName: `sidebar.templ`, Line: 73, Col: 13}
 			}
 			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var12))
 			if templ_7745c5c3_Err != nil {
@@ -323,7 +324,7 @@ func SidebarItem(opts ...props.SidebarItem) templ.Component {
 			var templ_7745c5c3_Var13 templ.SafeURL
 			templ_7745c5c3_Var13, templ_7745c5c3_Err = templ.JoinURLErrs(p.Href)
 			if templ_7745c5c3_Err != nil {
-				return templ.Error{Err: templ_7745c5c3_Err, FileName: `sidebar.templ`, Line: 75, Col: 17}
+				return templ.Error{Err: templ_7745c5c3_Err, FileName: `sidebar.templ`, Line: 76, Col: 17}
 			}
 			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var13))
 			if templ_7745c5c3_Err != nil {
