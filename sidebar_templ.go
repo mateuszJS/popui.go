@@ -15,9 +15,11 @@ import (
 )
 
 // Sidebar provides a wrapper for sidebars on admin panels.
-// Visibility is controlled by the `popui-sidebar-open` class. At the `md`
-// breakpoint and above the class is applied automatically on page load.
-// Below `md` the Header's built-in menu button toggles it.
+// At the `md` breakpoint and above the sidebar is visible by default via the
+// `md:w-[240px]` and `md:visible` base classes. JavaScript then adds the
+// `popui-sidebar-ready` class to enable toggle behavior, using the
+// `popui-sidebar-open` class to represent the "open" state once ready. Below
+// `md`, the Header's built-in menu button toggles `popui-sidebar-open`.
 func Sidebar(opts ...props.Sidebar) templ.Component {
 	return templruntime.GeneratedTemplate(func(templ_7745c5c3_Input templruntime.GeneratedComponentInput) (templ_7745c5c3_Err error) {
 		templ_7745c5c3_W, ctx := templ_7745c5c3_Input.Writer, templ_7745c5c3_Input.Context
@@ -229,7 +231,7 @@ func SidebarSection(opts ...props.SidebarSection) templ.Component {
 			var templ_7745c5c3_Var9 string
 			templ_7745c5c3_Var9, templ_7745c5c3_Err = templ.JoinStringErrs(p.Title)
 			if templ_7745c5c3_Err != nil {
-				return templ.Error{Err: templ_7745c5c3_Err, FileName: `sidebar.templ`, Line: 58, Col: 15}
+				return templ.Error{Err: templ_7745c5c3_Err, FileName: `sidebar.templ`, Line: 60, Col: 15}
 			}
 			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var9))
 			if templ_7745c5c3_Err != nil {
@@ -308,7 +310,7 @@ func SidebarItem(opts ...props.SidebarItem) templ.Component {
 			var templ_7745c5c3_Var12 string
 			templ_7745c5c3_Var12, templ_7745c5c3_Err = templ.JoinStringErrs(p.ID)
 			if templ_7745c5c3_Err != nil {
-				return templ.Error{Err: templ_7745c5c3_Err, FileName: `sidebar.templ`, Line: 76, Col: 13}
+				return templ.Error{Err: templ_7745c5c3_Err, FileName: `sidebar.templ`, Line: 78, Col: 13}
 			}
 			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var12))
 			if templ_7745c5c3_Err != nil {
@@ -327,7 +329,7 @@ func SidebarItem(opts ...props.SidebarItem) templ.Component {
 			var templ_7745c5c3_Var13 templ.SafeURL
 			templ_7745c5c3_Var13, templ_7745c5c3_Err = templ.JoinURLErrs(p.Href)
 			if templ_7745c5c3_Err != nil {
-				return templ.Error{Err: templ_7745c5c3_Err, FileName: `sidebar.templ`, Line: 79, Col: 17}
+				return templ.Error{Err: templ_7745c5c3_Err, FileName: `sidebar.templ`, Line: 81, Col: 17}
 			}
 			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var13))
 			if templ_7745c5c3_Err != nil {
