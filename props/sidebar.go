@@ -11,7 +11,7 @@ const (
 type Sidebar struct {
 	Title      string
 	Class      string
-	Variant    string // "dark" for dark background variant, default is light
+	Variant    string
 	Attributes templ.Attributes
 }
 

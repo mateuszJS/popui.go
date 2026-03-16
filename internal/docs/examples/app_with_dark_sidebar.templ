@@ -9,10 +9,20 @@ import (
 templ AppWithDarkSidebarExample() {
 	@popui.App(props.App{Title: "Application With Dark Sidebar"}) {
 		@popui.Sidebar(props.Sidebar{Variant: props.SidebarVariantDark}) {
-			@popui.SidebarHeader() {
-				@popui.InvopopLogoSquare()
-				Sidebar
+		@popui.SidebarHeader() {
+			@popui.InvopopLogoSquare()
+			<span class="flex-1">Sidebar</span>
+			@popui.Button(props.Button{
+				Variant: props.ButtonVariantTransparent,
+				Size:    props.ButtonSizeIcon,
+				Class:   "-mr-1",
+				Attributes: templ.Attributes{
+					"data-sidebar-hide": "",
+				},
+			}) {
+				@icons.SidebarHide()
 			}
+		}
 			@popui.SidebarContent() {
 				@popui.SidebarSection(props.SidebarSection{Title: "Section 1"}) {
 					@popui.SidebarItem(props.SidebarItem{Href: "#", Selected: true}) {

@@ -1,6 +1,7 @@
 package docs
 
 import (
+	"github.com/invopop/icons"
 	"github.com/invopop/popui.go/internal/docs/assets"
 	"github.com/invopop/popui.go/props"
 	"path"
@@ -20,7 +21,9 @@ templ Index() {
 		Data: "docs",
 	}) {
 		@sidebar()
-		@popui.Header(props.Header{Title: title()})
+		@popui.Header(props.Header{Title: title()}) {
+			@darkModeToggle()
+		}
 		@popui.Main(props.Main{Cloak: true}) {
 			@getStarted()
 			for _, group := range groups {
@@ -43,6 +46,11 @@ templ title() {
 }
 
 templ headers() {
+	<script>
+		if (localStorage.getItem("dark-mode") === "true") {
+			document.documentElement.classList.add("dark");
+		}
+	</script>
 	<!-- Prism.js for syntax highlighting -->
 	<link href={ "/assets/" + assets.Versioned("prism-popui.css") } rel="stylesheet"/>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
@@ -126,14 +134,16 @@ templ article(id, title, description string) {
 			"x-show": "page == '" + id + "'",
 		},
 	}) {
-		<div class="w-full max-w-[1440px] mx-auto pt-2 pb-16">
+		<div class="w-full max-w-[1200px] mx-auto pt-2 pb-16">
 			<div class="space-y-8">
-				<div class="space-y-1.5">
-					<h1 class="text-2xl font-bold">{ title }</h1>
-					<p class="text-lg text-foreground-default-secondary">
-						{ description }
-					</p>
-				</div>
+			<div class="space-y-1.5">
+				@popui.Title(props.Title{Class: "text-2xl font-bold"}) {
+					{ title }
+				}
+				@popui.Description(props.Description{Class: "text-lg"}) {
+					{ description }
+				}
+			</div>
 				{ children... }
 			</div>
 		</div>
@@ -143,9 +153,19 @@ templ article(id, title, description string) {
 templ sidebar() {
 	@popui.Sidebar(props.Sidebar{Title: "PopUI Documentation", Variant: props.SidebarVariantDark}) {
 		@popui.SidebarHeader() {
-			<a href="/">
+			<a href="/" class="flex-1">
 				@popui.PopuiLogo()
 			</a>
+		@popui.Button(props.Button{
+			Variant: props.ButtonVariantTransparent,
+			Size:    props.ButtonSizeIcon,
+			Class:   "-mr-1",
+			Attributes: templ.Attributes{
+				"data-sidebar-hide": "",
+			},
+		}) {
+			@icons.SidebarHide()
+		}
 		}
 		@popui.SidebarContent() {
 			for gi, group := range groups {
@@ -181,4 +201,20 @@ templ sidebarItem(href, title string) {
 
 func slugify(path string) string {
 	return strings.ToLower(strings.ReplaceAll(path, "/", "-"))
+}
+
+templ darkModeToggle() {
+	<button
+		x-data="darkModeToggle"
+		@click="toggle"
+		class="flex items-center justify-center size-8 -mr-2 rounded-lg text-icon-default-secondary hover:text-icon hover:bg-background-default-secondary transition-colors cursor-pointer"
+		title="Toggle dark mode"
+	>
+		<div
+			class="transition-transform duration-300"
+			:class="{ 'rotate-180': dark }"
+		>
+			@icons.Theme()
+		</div>
+	</button>
 }
