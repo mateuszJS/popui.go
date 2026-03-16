@@ -75,16 +75,6 @@ func App() templ.Component {
 			return templ_7745c5c3_Err
 		}
 		templ_7745c5c3_Err = modules.Example(modules.ExampleProps{
-			Title:         "App with Dark Sidebar Navigation",
-			Description:   "App layout with a dark-themed sidebar using the \"dark\" variant for inverse colors.",
-			Code:          examples.LoadExample("app_with_dark_sidebar.templ"),
-			IframeContent: examples.AppWithDarkSidebarExample(),
-			Stacked:       true,
-		}).Render(ctx, templ_7745c5c3_Buffer)
-		if templ_7745c5c3_Err != nil {
-			return templ_7745c5c3_Err
-		}
-		templ_7745c5c3_Err = modules.Example(modules.ExampleProps{
 			Title:         "App with table and pagination",
 			Description:   "App layout that includes a full width table and pagination in the main content area.",
 			Code:          examples.LoadExample("app_with_table.templ"),

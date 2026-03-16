@@ -43,7 +43,7 @@ func Sidebar(opts ...props.Sidebar) templ.Component {
 		ctx = templ.ClearChildren(ctx)
 		p := props.First(opts)
 		var templ_7745c5c3_Var2 = []any{tailwind.Merge(
-			"h-full w-0 md:w-[240px] invisible md:visible bg-background-default-bold flex flex-col items-center gap-0 transition-[width] ease-in-out duration-300 border-r border-border [&_ul_li_a]:whitespace-nowrap [&_ul_li_a]:overflow-hidden [&_ul_li_a_div]:shrink-0",
+			"h-full w-0 md:w-[240px] invisible md:visible bg-background flex flex-col items-center gap-0 transition-[width] ease-in-out duration-300 border-r border-border [&_ul_li_a]:whitespace-nowrap [&_ul_li_a]:overflow-hidden [&_ul_li_a_div]:shrink-0",
 			classes.If(p.Variant == props.SidebarVariantDark, "sidebar-dark"),
 			p.Class,
 		),
