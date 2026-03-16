@@ -146,8 +146,15 @@ form {
 .popui-sidebar-toggle {
   display: none;
 }
-:has(#popui-sidebar.popui-sidebar-ready:not(.popui-sidebar-open)) .popui-sidebar-toggle {
+:has(#popui-sidebar:not(.popui-sidebar-open)) .popui-sidebar-toggle {
   display: flex;
+}
+/* On md+ the sidebar is visible by default (before JS runs), so hide the
+   toggle until popui-sidebar-ready confirms JS has taken control. */
+@media (min-width: 768px) {
+  :has(#popui-sidebar:not(.popui-sidebar-ready):not(.popui-sidebar-open)) .popui-sidebar-toggle {
+    display: none;
+  }
 }
 
 /* Sidebar closed state — overrides md:w-[240px] / md:visible after JS has initialised */
