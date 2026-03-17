@@ -134,7 +134,7 @@ templ article(id, title, description string) {
 			"x-show": "page == '" + id + "'",
 		},
 	}) {
-		<div class="w-full max-w-[1440px] mx-auto pt-2 pb-16">
+		<div class="w-full max-w-[1200px] mx-auto pt-2 pb-16">
 			<div class="space-y-8">
 			<div class="space-y-1.5">
 				@popui.Title(props.Title{Class: "text-2xl font-bold"}) {
@@ -151,9 +151,7 @@ templ article(id, title, description string) {
 }
 
 templ sidebar() {
-	@popui.Sidebar(props.Sidebar{
-		Title: "PopUI Documentation",
-	}) {
+	@popui.Sidebar(props.Sidebar{Title: "PopUI Documentation", Variant: props.SidebarVariantDark}) {
 		@popui.SidebarHeader() {
 			<a href="/" class="flex-1">
 				@popui.PopuiLogo()
@@ -170,11 +168,11 @@ templ sidebar() {
 		}
 		}
 		@popui.SidebarContent() {
-			@popui.SidebarSection(props.SidebarSection{Title: "Overview"}) {
-				@sidebarItem("getting-started", "Get started")
-			}
-			for _, group := range groups {
+			for gi, group := range groups {
 				@popui.SidebarSection(props.SidebarSection{Title: group.Title}) {
+					if gi == 0 {
+						@sidebarItem("getting-started", "Get Started")
+					}
 					for _, page := range group.Pages {
 						@sidebarPageItem(group, page)
 					}

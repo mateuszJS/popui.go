@@ -149,6 +149,19 @@ form {
 :has(#popui-sidebar:not(.popui-sidebar-open)) .popui-sidebar-toggle {
   display: flex;
 }
+/* On md+ the sidebar is visible by default (before JS runs), so hide the
+   toggle until popui-sidebar-ready confirms JS has taken control. */
+@media (min-width: 768px) {
+  :has(#popui-sidebar:not(.popui-sidebar-ready):not(.popui-sidebar-open)) .popui-sidebar-toggle {
+    display: none;
+  }
+}
+
+/* Sidebar closed state — overrides md:w-[240px] / md:visible after JS has initialised */
+#popui-sidebar.popui-sidebar-ready:not(.popui-sidebar-open) {
+  width: 0;
+  visibility: hidden;
+}
 
 /* Sidebar open state */
 #popui-sidebar.popui-sidebar-open {
@@ -206,6 +219,51 @@ form {
   --tw-prose-td-borders: var(--color-border-default-default);
 }
 
+/* Sidebar Dark Variant */
+.sidebar-dark {
+  background-color: var(--color-background-default-bold);
+  border-color: var(--color-border-inverse-default);
+}
+
+.sidebar-dark > .SidebarHeader {
+  border-color: var(--color-border-inverse-default);
+  color: var(--color-foreground-inverse-default);
+}
+
+.sidebar-dark > .SidebarHeader a,
+.sidebar-dark > .SidebarHeader button svg {
+  color: var(--color-foreground-inverse-default);
+}
+
+.sidebar-dark > .SidebarFooter {
+  border-color: var(--color-border-inverse-default);
+  color: var(--color-foreground-inverse-default);
+}
+
+.sidebar-dark p {
+  color: var(--color-foreground-inverse-secondary);
+}
+
+.sidebar-dark ul li a {
+  color: var(--color-foreground-inverse-default);
+}
+
+.sidebar-dark ul li a:hover {
+  background-color: var(--color-background-selected-inverse-hover);
+}
+
+.sidebar-dark ul li a svg *[stroke] {
+  stroke: var(--color-icon-inverse-default);
+}
+.sidebar-dark ul li a svg *[fill] {
+  fill: var(--color-icon-inverse-default);
+}
+
+.sidebar-dark ul li a.bg-background-default-secondary {
+  background-color: var(--color-background-selected-inverse);
+  box-shadow: inset 0 0 0 1px var(--color-border-inverse-default);
+}
+
 /* Flash message animation */
 @keyframes flashMessage {
   0% {
@@ -226,4 +284,73 @@ form {
     opacity: 0;
     transform: translateY(25%);
   }
+}
+
+/* Animated sidebar hide icon */
+
+.icon-sidebar-hide_anim_line,
+.icon-sidebar-hide_anim_arrow {
+  transition: all 0.4s ease;
+}
+
+.icon-sidebar-hide_anim_line {
+  transition-behavior: allow-discrete;
+}
+
+.icon-sidebar-hide_anim {
+  overflow: hidden;
+}
+
+.icon-sidebar-hide:hover .icon-sidebar-hide_anim_line {
+  transform: translate(-2.5px, 0) scale(0.70, 1);
+}
+
+.icon-sidebar-hide:hover .icon-sidebar-hide_anim_line rect {
+  rx: 0.5px;
+}
+
+.icon-sidebar-hide:hover .icon-sidebar-hide_anim_arrow {
+  transform: translate(-11px, 0);
+  display: block;
+}
+
+/* Animated sidebar show icon */
+
+.icon-sidebar-show_anim_line,
+.icon-sidebar-show_anim_arrow {
+  transition: transform 0.4s ease;
+}
+
+.icon-sidebar-show_anim_arrow {
+  transform: scale(-1, 1) translateX(-1px);
+  transform-origin: 8px 8px;
+}
+
+.icon-sidebar-show:hover .icon-sidebar-show_anim_line,
+.icon-sidebar-show:hover .icon-sidebar-show_anim_arrow {
+  transform: translate(4px, 0);
+  rx: 0;
+}
+
+.icon-sidebar-show_anim_line rect {
+  rx: 0.5px;
+  transform: translate(1.3px, 3px) scale(0.70, 1);
+}
+
+.icon-sidebar-show:hover .icon-sidebar-show_anim_line rect {
+  rx: 0px;
+  transform: translate(1px, 3px) scale(1, 1);
+}
+
+.icon-sidebar-show:hover .icon-sidebar-show_anim_arrow {
+    transform: scale(-1,1) translate(-4px, 0);
+}
+
+/* Animated pulse icon */
+
+.icon-pulse_r0 { animation: icon-pulse-animation 1.6s ease-in-out infinite 0s; }
+.icon-pulse_r1 { animation: icon-pulse-animation 1.6s ease-in-out infinite 0.16s; }
+@keyframes icon-pulse-animation {
+  0%, 100% { fill: var(--color-background-default-tertiary); }
+  40% { fill: var(--color-accent-50); }
 }

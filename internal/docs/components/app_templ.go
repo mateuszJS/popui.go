@@ -254,6 +254,7 @@ func App() templ.Component {
 				Items: []modules.APITableItem{
 					{Name: "Title", Type: "string", Default: "", Description: "Title for the sidebar (currently unused in rendering, reserved for accessibility)"},
 					{Name: "Class", Type: "string", Default: "", Description: "Additional CSS classes to merge with sidebar styles"},
+					{Name: "Variant", Type: "string", Default: "", Description: "Visual style variant. Use \"dark\" for a dark background with inverse text and border colors."},
 					{Name: "Attributes", Type: "templ.Attributes", Default: "", Description: "Additional HTML attributes"},
 				},
 			}).Render(ctx, templ_7745c5c3_Buffer)

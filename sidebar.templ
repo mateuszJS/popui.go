@@ -7,16 +7,19 @@ import (
 )
 
 // Sidebar provides a wrapper for sidebars on admin panels.
-// Visibility is controlled by the `popui-sidebar-open` class. At the `md`
-// breakpoint and above the class is applied automatically on page load.
-// Below `md` the Header's built-in menu button toggles it.
+// At the `md` breakpoint and above the sidebar is visible by default via the
+// `md:w-[240px]` and `md:visible` base classes. JavaScript then adds the
+// `popui-sidebar-ready` class to enable toggle behavior, using the
+// `popui-sidebar-open` class to represent the "open" state once ready. Below
+// `md`, the Header's built-in menu button toggles `popui-sidebar-open`.
 templ Sidebar(opts ...props.Sidebar) {
 	{{ p := props.First(opts) }}
 	<nav
 		id="popui-sidebar"
 		class={
 			tailwind.Merge(
-				"h-full w-0 invisible bg-background flex flex-col items-center gap-0 transition-[width] ease-in-out duration-300 border-r border-border [&_ul_li_a]:whitespace-nowrap [&_ul_li_a]:overflow-hidden [&_ul_li_a_div]:shrink-0",
+				"h-full w-0 md:w-[240px] invisible md:visible bg-background flex flex-col items-center gap-0 transition-[width] ease-in-out duration-300 border-r border-border [&_ul_li_a]:whitespace-nowrap [&_ul_li_a]:overflow-hidden [&_ul_li_a_div]:shrink-0",
+				classes.If(p.Variant == props.SidebarVariantDark, "sidebar-dark"),
 				p.Class,
 			),
 		}
@@ -28,14 +31,14 @@ templ Sidebar(opts ...props.Sidebar) {
 
 // SidebarHeader provides a header for the sidebar
 templ SidebarHeader() {
-	<div class="w-full flex p-4 items-center gap-2 border-b border-border text-foreground font-sans text-base font-semibold whitespace-nowrap h-12 [&>div]:!w-7 [&>div]:!h-7">
+	<div class="SidebarHeader w-full flex pl-5 pr-3 py-3 items-center gap-2 border-b border-border text-foreground font-sans text-base font-semibold whitespace-nowrap h-12 [&>div]:!w-7 [&>div]:!h-7">
 		{ children... }
 	</div>
 }
 
 // SidebarContent provides a wrapper for the content of the sidebar
 templ SidebarContent() {
-	<div class="w-full flex grow py-5 px-3 flex-col items-center gap-4 overflow-y-auto">
+	<div class="w-full flex grow min-h-0 pt-5 pb-3 px-3 flex-col items-center gap-6 overflow-y-auto">
 		{ children... }
 	</div>
 }
@@ -47,7 +50,7 @@ templ SidebarSection(opts ...props.SidebarSection) {
 	<div
 		class={
 			tailwind.Merge(
-				"w-full flex flex-col items-start gap-2 [&_p]:text-foreground-default-secondary [&_p]:font-sans [&_p]:text-sm [&_p]:font-medium [&_p]:indent-2 [&_ul]:flex [&_ul]:flex-col [&_ul]:items-start [&_ul]:w-full [&_ul]:gap-1.5 [&_ul_li]:w-full [&_a]:w-full [&_a]:flex [&_a]:py-1.5 [&_a]:px-2 [&_a]:items-center [&_a]:gap-1.5 [&_a]:rounded-lg [&_a]:text-foreground [&_a]:font-sans [&_a]:text-base [&_a]:font-medium [&_a:hover]:bg-background-default-secondary [&_svg_*[stroke]]:stroke-[var(--color-icon-default-default)] [&_svg_*[fill]]:fill-[var(--color-icon-default-default)]",
+				"w-full flex flex-col items-start gap-2 [&_p]:text-foreground-default-secondary [&_p]:font-sans [&_p]:text-sm [&_p]:font-medium [&_p]:indent-2 [&_ul]:flex [&_ul]:flex-col [&_ul]:items-start [&_ul]:w-full [&_ul]:gap-0.5 [&_ul_li]:w-full [&_a]:w-full [&_a]:flex [&_a]:py-1.5 [&_a]:px-2 [&_a]:items-center [&_a]:gap-1.5 [&_a]:rounded-lg [&_a]:text-foreground [&_a]:font-sans [&_a]:text-base [&_a]:font-medium [&_a:hover]:bg-background-default-secondary [&_svg_*[stroke]]:stroke-[var(--color-icon-default-default)] [&_svg_*[fill]]:fill-[var(--color-icon-default-default)]",
 				p.Class,
 			),
 		}
@@ -92,7 +95,7 @@ templ SidebarItem(opts ...props.SidebarItem) {
 
 // SidebarFooter provides a footer for the sidebar
 templ SidebarFooter() {
-	<div class="grow-0 border-t border-border-default-secondary py-2 px-4 w-full">
+	<div class="SidebarFooter grow-0 border-t border-border-default-secondary py-2 px-4 w-full">
 		{ children... }
 	</div>
 }

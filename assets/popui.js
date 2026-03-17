@@ -215,6 +215,9 @@ const CONSOLE_SDK_URL = 'https://cdn.jsdelivr.net/npm/@invopop/console-ui-sdk@0.
       // Open by default at md+ breakpoint
       if (mql.matches) openSidebar()
 
+      // Mark as ready so the CSS closed-state rule can take effect
+      requestAnimationFrame(() => popuiSidebar.classList.add('popui-sidebar-ready'))
+
       // Toggle button (open sidebar)
       document.querySelectorAll('[data-sidebar-toggle]').forEach((btn) => {
         btn.addEventListener('click', toggleSidebar)
