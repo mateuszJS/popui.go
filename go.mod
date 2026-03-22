@@ -1,4 +1,4 @@
-module github.com/invopop/popui.go
+module github.com/mateuszJS/popui.go
 
 go 1.25.5
 
