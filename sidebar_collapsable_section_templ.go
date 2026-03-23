@@ -9,9 +9,7 @@ import "github.com/a-h/templ"
 import templruntime "github.com/a-h/templ/runtime"
 
 import (
-	"fmt"
 	"github.com/invopop/icons"
-	"github.com/invopop/popui.go/classes"
 	"github.com/invopop/popui.go/props"
 	"github.com/invopop/popui.go/tailwind"
 )
@@ -82,7 +80,7 @@ func SidebarCollapsableSection(opts ...props.SidebarCollapseSection) templ.Compo
 			var templ_7745c5c3_Var4 string
 			templ_7745c5c3_Var4, templ_7745c5c3_Err = templ.JoinStringErrs(p.Title)
 			if templ_7745c5c3_Err != nil {
-				return templ.Error{Err: templ_7745c5c3_Err, FileName: `sidebar_collapsable_section.templ`, Line: 27, Col: 16}
+				return templ.Error{Err: templ_7745c5c3_Err, FileName: `sidebar_collapsable_section.templ`, Line: 25, Col: 16}
 			}
 			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var4))
 			if templ_7745c5c3_Err != nil {
