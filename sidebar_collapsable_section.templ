@@ -6,8 +6,7 @@ import (
 	"github.com/invopop/popui.go/tailwind"
 )
 
-// Sidebar provides a wrapper for a ul element used in Sidebar component.
-// Expects either a set of `<li>` or SidebarItem components.
+// SidebarCollapsableSection is a collapsable wrapper for SidebarItems or `<li>`.
 templ SidebarCollapsableSection(opts ...props.SidebarCollapseSection) {
 	{{ p := props.First(opts) }}
 	<details
